@@ -5,7 +5,7 @@
  * Date: 2016/12/23
  * Time: 10:12
  */
-
+header('content-type:text/html;charset:utf8');
 error_reporting(E_ALL);
 
 echo 'hello world';#输出字符串
@@ -26,7 +26,7 @@ echo PHP_INT_SIZE;
 
 #大数的溢出
 
-var_dump(1231283789896489172379721379);//返回float浮点型
+var_dump(898964891);//返回float浮点型
 
 #除法的四舍五入
 
@@ -48,7 +48,6 @@ if(abs($a-$b) < $eps){
 
 #字符串
 
-echo 'hello';
 echo 'hello\n$a';
 echo "hello\r\n";
 echo "hello$a";
@@ -62,4 +61,82 @@ var_dump($temp);
 echo "this is ${a}";
 echo "this is {$a}";
 
+function getArray(){
+    return [['baba','mama'],2,'b'];
+}
+$arr = [
+    '1'=>'a',
+    '1.5'=>'b',
+    'true' =>'c'
+];
+var_dump($arr);
+$tmp = getArray();
+list($pram1,,$pram2) = getArray();
+list(,$children2) = $pram1;
+print_r($children2);
 
+//$fun = function fun(){
+//    return 'hello fun';
+//};
+//
+//echo $fun;
+
+$c='d';
+$d='e';
+$e='f';
+echo $$$c;
+echo '<br />';
+echo '<pre>';
+$f = &$e;
+echo $f;
+$f = 'test';
+echo $e;
+echo $f;
+echo '<br>';
+
+function test(&$param)
+{
+    $param=$param.'hahaha';
+}
+test($f);
+echo $e;
+echo $f;
+echo '<br>';
+function &test2()
+{
+    static $b=0;//申明一个静态变量
+    $b=$b+1;
+    echo $b;
+    return $b;
+}
+$g = test2();
+
+$g = &test2();
+
+$g = 5;
+$g = test2();
+
+echo '你好啊';
+$haha = 'true';
+echo $haha;
+
+$str = 'A>B,B<c,it is fine';
+$htmlstr = htmlspecialchars($str);
+
+echo '<br>';
+echo $haha[1];
+
+$doc = <<<"DOC"
+test {$htmlstr};
+DOC;
+echo $doc;
+echo '<br>';
+echo false, "test";
+
+$arr = 'tes';
+echo is_scalar($arr);
+
+/*
+ * 类型
+ */
+echo gettype($g);
