@@ -60,3 +60,28 @@ print_r(array_combine($keys, $vals));
 $input = array("red", "green", "blue", "yellow");
 array_splice($input, 1, -1);
 print_r($input);
+
+array_unshift($input,'hello');
+print_r($input);
+
+array_shift($input);
+print_r($input);
+
+array_push($input,'test');
+print_r($input);
+
+array_pop($input);
+print_r($input);
+
+$arr = ['a',1,'b',3,'d'];
+//sort($arr);
+//rsort($arr);
+//asort($arr);
+arsort($arr);
+print_r($arr);
+/*
+ * array_diff()
+ * array_intersect()
+ * array_diff_assoc()
+ * array_intersect_assoc()
+ */

@@ -44,7 +44,7 @@ class Person{
 
     public function __isset($name)
     {
-        echo '发生监测时触发';
+        echo '发生监测时触发'.'<br />';
         return isset($this->$name);
     }
 
@@ -53,7 +53,7 @@ class Person{
      */
     public function __unset($name)
     {
-        echo '发生销毁时触发';
+        echo '发生销毁时触发'.'<br />';
         unset($this->$name);
     }
 
@@ -66,3 +66,6 @@ $wang->test = 1111;
 echo $wang->age;
 isset($wang->ptest);
 unset($wang->data);
+
+echo '<br />';
+echo "0";

@@ -26,8 +26,6 @@ class Person
 
     public function __destruct()
     {
-        $this->str;
-        $this->age;
 
     }
 
